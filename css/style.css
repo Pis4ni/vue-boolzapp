@@ -1,0 +1,116 @@
+img{
+    width: 100%;
+}
+
+ul{
+    list-style: none;
+}
+
+.wrapper {
+    display:flex ;
+    justify-content: center;
+    align-items: center;
+
+
+    background: linear-gradient( #009688, #009688 130px, #dbdbd3, #dbdbd3 40px); 
+    height: 100vh; 
+    width: 100%;
+}
+
+/* app container */
+.app-container{
+    height: 95%;
+    width: 90%;
+
+    display: flex;
+    
+    background-color: #eaeaea;
+}
+
+/* left navigation bar */
+.main-nav{
+    width: 30% ;
+}
+
+/* selected chat */
+.main-chat{
+    width: 70%;
+}
+
+/* headers */
+.header{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user-profile{
+    height: 100% ;
+    display: flex;
+    align-items: center;
+}
+.user-profile>img{
+    width: 50px;
+    margin: 0 1rem;
+}
+
+.nav-actions{
+    padding: 0 1rem;
+}
+.nav-actions>*{
+    margin: .25rem;
+}
+/* !debug */
+.deb{
+    border: 1px dashed black;
+}
+
+.rounded-container{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.cyan{
+    color:#8edafc ;
+    background-color:#f2fbff ;
+}
+.reverse-cyan{
+    background-color:#8edafc ;
+    color:#f2fbff ;
+}
+
+.form{
+    position: relative;
+}
+
+.form .fa-search{
+    position: absolute;
+    top:13px;
+    left: 20px;
+    color: #9ca3af;
+}
+
+.form span{
+    position: absolute;
+    right: 17px;
+    top: 13px;
+    padding: 2px;
+    border-left: 1px solid #d1d5db;
+}
+
+.form-input{
+    height: 40px;
+    text-indent: 33px;
+    border-radius: 10px;
+}
+
+.form-input:focus{
+    box-shadow: none;
+    border:none;
+}
+
+.text-small{
+    font-size: .8rem;
+}
