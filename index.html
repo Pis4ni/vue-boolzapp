@@ -23,10 +23,10 @@
 
             <!--! left-------------------->
             <!--* navbar -->
-            <nav class="main-nav deb">
+            <nav class="main-nav ">
 
                 <!--* navbar header -->
-                <header class="header deb">
+                <header class="header  text-secondary">
                     <div class="user-profile">
                         <img src="./img/avatar_2.jpg" class="rounded-circle" alt="">
                         <span class="">Fabio</span>
@@ -39,8 +39,8 @@
                 </header>
 
                 <!--* pop-up -->
-                <div class="pop-up reverse-cyan p-1 ps-3 d-flex deb">
-                    <div class="rounded-container d-flex justify-content-center align-items-center cyan deb">
+                <div class="pop-up reverse-cyan p-1 ps-3 d-flex ">
+                    <div class="rounded-container d-flex justify-content-center align-items-center cyan ">
                         <i class="fa-solid fa-bell-slash"></i>
                     </div>
                     <div class="pop-up-content">
@@ -54,29 +54,79 @@
                     <i class="fa fa-search"></i>
                     <input type="text" class="form-control form-input" placeholder="Search anything...">
                 </div>
-
-                <!--* contact list -->
-                <ul class="contacts-list p-0">
-                    <li>
-                        <div class="user-profile">
-                            <img src="./img/avatar_2.jpg" class="rounded-circle" alt="">
-                            <div class="d-flex justify-content-between  w-100">
-                                <div class="d-flex flex-column">
-                                    <span class="">Fabio</span>
-                                    <span class="text-secondary text-small">Last message...</span>
-                                </div>
-                                <div class="date text-small text-secondary mx-1">
-                                    12:00
+                <!--* contacts list -->
+                <div class="chats">
+                    <ul class="contacts-list p-0">
+                        <!--* contact -->
+                        <li class="chat py-1">
+                            <div class="user-profile">
+                                <img src="./img/avatar_2.jpg" class="rounded-circle" alt="">
+                                <div class="d-flex justify-content-between  w-100">
+                                    <div class="d-flex flex-column">
+                                        <span class="">Fabio</span>
+                                        <span class="text-secondary text-small">Last message...</span>
+                                    </div>
+                                    <div class="date text-small text-secondary mx-1">
+                                        12:00
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </li>
-                </ul>
+                        </li>
+                    </ul>
+
+                </div>
             </nav>
 
             <!--! right-------------------->
             <!--* visualized chat -->
-            <div class="main-chat deb">
+            <div class="main-chat ">
+                <!--* selected chat header -->
+                <header class="header ">
+                    <div class="user-profile">
+                        <img src="./img/avatar_2.jpg" class="rounded-circle" alt="">
+                        <div class="d-flex flex-column">
+                            <span class="">Fabio</span>
+                            <span class="text-secondary text-small">Last access today at 23:00</span>
+                        </div>
+                    </div>
+                    <div class="nav-actions text-secondary">
+                        <i class="fa-solid fa-circle-notch"></i>
+                        <i class="fa-solid fa-message"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+                </header>
+
+                <!--* selected chat content -->
+                <div class="chat-display p-2">
+
+                    <!-- TODO mine message -->
+                    <div class="message-row d-flex justify-content-end m-2">
+                        <div class="message mine d-flex">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, earum.</p>
+                            <span class="text-secondary flex-column d-flex justify-content-end text-small">22:07</span>
+                        </div>
+                    </div>
+                    <!-- TODO others message -->
+                    <div class="message-row d-flex justify-content-start m-2">
+                        <div class="message others d-flex">
+                            <p>Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, consectetur adipisicing. adipisicing elit. Ea, earum.</p>
+                            <span class="text-secondary d-flex  flex-column justify-content-end text-small">22:07</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!--* chat inputs  -->
+                <footer class="d-flex justify-content-evenly align-items-center">
+                    
+                    <i class="fa-regular fa-face-smile"></i>
+
+                    <!-- * text input -->
+                    <input type="text" name="message" placeholder="Write a message" id="message-input">
+                
+                    <i class="fa-solid fa-microphone"></i>
+                
+                </footer>
+
 
             </div>
 
