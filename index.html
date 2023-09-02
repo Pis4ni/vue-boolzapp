@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="./css/style.css">
     <!-- JS -> DATA -->
     <script defer src="./js/data.js"></script>
+    <!-- VUE -->
+    <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- JS -> VUE -->
     <script defer src="./js/app.js"></script>
     
@@ -44,8 +46,8 @@
                         <i class="fa-solid fa-bell-slash"></i>
                     </div>
                     <div class="pop-up-content">
-                        <span class="mx-2 text-dark d-block">Ricevi notifiche di nuovi messaggi</span>
-                        <a href="#" class="text-secondary mx-2">Attiva notifiche desktop</a>
+                        <span class="mx-2 text-dark d-block text-small">Ricevi notifiche di nuovi messaggi</span>
+                        <a href="#" class="text-small text-secondary mx-2">Attiva notifiche desktop</a>
                     </div>
                 </div>
 
@@ -58,12 +60,12 @@
                 <div class="chats">
                     <ul class="contacts-list p-0">
                         <!--* contact -->
-                        <li class="chat py-1">
+                        <li class="chat py-1" v-for="(contact, index) in contacts">
                             <div class="user-profile">
-                                <img src="./img/avatar_2.jpg" class="rounded-circle" alt="">
+                                <img :src="contacts[index].avatar" class="rounded-circle" alt="">
                                 <div class="d-flex justify-content-between  w-100">
                                     <div class="d-flex flex-column">
-                                        <span class="">Fabio</span>
+                                        <span class="">{{contacts[index].name}}</span>
                                         <span class="text-secondary text-small">Last message...</span>
                                     </div>
                                     <div class="date text-small text-secondary mx-1">
