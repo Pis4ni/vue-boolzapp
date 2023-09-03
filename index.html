@@ -60,7 +60,7 @@
                 <div class="chats">
                     <ul class="contacts-list p-0">
                         <!--* contact -->
-                        <li class="chat py-1" v-for="(contact, index) in contacts">
+                        <li class="chat py-1" v-for="(contact, index) in contacts" @click="goTo(index)">
                             <div class="user-profile">
                                 <img :src="contacts[index].avatar" class="rounded-circle" alt="">
                                 <div class="d-flex justify-content-between  w-100">
@@ -100,21 +100,31 @@
 
                 <!--* selected chat content -->
                 <div class="chat-display p-2">
+                    <!--* message row -->
+                    <div class="message-row d-flex m-2" v-for="(message,index) in contacts[activeChat].messages">
+                        <!--* message container -->
+                        <div class="w-100 d-flex justify-content-end"  v-if="contacts[activeChat].messages[index].status == 'sent'" >
+                            <!-- * mine message -->
+                            <div class="message mine d-flex">
+                                <!--* message content -->
+                                <p>{{contacts[activeChat].messages[index].message}}</p>
+                                <!--* message time -->
+                                <span class="text-secondary d-flex  flex-column justify-content-end text-small">{{contacts[activeChat].messages[index].date}}</span>
+                            </div>
+                        </div>
+                        <!--* message container -->
+                        <div class="w-100 d-flex justify-content-start"  v-else >
+                            <!-- * others message -->
+                            <div class="message others d-flex">
+                                <!--* message content -->
+                                <p>{{contacts[activeChat].messages[index].message}}</p>
+                                <!--* message time -->
+                                <span class="text-secondary d-flex  flex-column justify-content-end text-small">{{contacts[activeChat].messages[index].date}}</span>
+                            </div>
+                        </div>
 
-                    <!-- TODO mine message -->
-                    <div class="message-row d-flex justify-content-end m-2">
-                        <div class="message mine d-flex">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, earum.</p>
-                            <span class="text-secondary flex-column d-flex justify-content-end text-small">22:07</span>
-                        </div>
                     </div>
-                    <!-- TODO others message -->
-                    <div class="message-row d-flex justify-content-start m-2">
-                        <div class="message others d-flex">
-                            <p>Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, consectetur adipisicing. adipisicing elit. Ea, earum.</p>
-                            <span class="text-secondary d-flex  flex-column justify-content-end text-small">22:07</span>
-                        </div>
-                    </div>
+
                 </div>
 
                 <!--* chat inputs  -->

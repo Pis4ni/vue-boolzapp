@@ -62,10 +62,6 @@ ul{
 .nav-actions>*{
     margin: .25rem;
 }
-/* !debug */
-.deb{
-    border: 1px dashed black;
-}
 
 .rounded-container{
     width: 50px;
@@ -120,6 +116,10 @@ ul{
     height: calc(100% - 160px);
     overflow-y:scroll;
     background-color: #ffffff;
+}
+
+nav ul li{
+    cursor: pointer;
 }
 
 .chat-display{

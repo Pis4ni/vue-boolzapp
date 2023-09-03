@@ -3,10 +3,15 @@ const { createApp } = Vue
 createApp({
   data() {
     return {
-      message:'hi',
+      
       contacts:contacts,
+      activeChat:0,
+
     }
+  },
+  methods:{
+    goTo(index){
+      this.activeChat = index
+    },
   }
 }).mount('#app')
-console.log(contacts[4].avatar);
-console.log(contacts[0].avatar);
