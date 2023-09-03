@@ -3,6 +3,7 @@ const { createApp } = Vue
 createApp({
   data() {
     return {
+      searchBar:'',
       newMessage:'',
       contacts:contacts,
       activeChat:0,
@@ -41,7 +42,8 @@ createApp({
       this.atuoReply = setTimeout(()=>{
         this.autoMessage(this.activeChat)
       },2000)
-    }
+    },
+
   },
   created() {
     window.addEventListener('keydown', this.handleKeyDown);

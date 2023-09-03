@@ -54,14 +54,15 @@
                 <!--* search-bar -->
                 <div class="form">
                     <i class="fa fa-search"></i>
-                    <input type="text" class="form-control form-input" placeholder="Search anything...">
+                    <input v-model="searchBar" type="text" class="form-control form-input" placeholder="Search anything...">
                 </div>
                 <!--* contacts list -->
                 <div class="chats">
                     <ul class="contacts-list p-0">
                         <!--* contact -->
-                        <li class="chat py-1" v-for="(contact, index) in contacts" @click="goTo(index)">
+                        <li class="chat py-1" v-for="(contact, index) in contacts" @click="goTo(index)" v-show="contacts[index].name.toLowerCase().includes(searchBar) || searchBar == '' ">
                             <div class="user-profile">
+
                                 <img :src="contacts[index].avatar" class="rounded-circle" alt="">
                                 <div class="d-flex justify-content-between  w-100">
                                     <div class="d-flex flex-column">
