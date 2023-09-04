@@ -86,9 +86,9 @@
                 <!--* selected chat header -->
                 <header class="header ">
                     <div class="user-profile">
-                        <img src="./img/avatar_2.jpg" class="rounded-circle" alt="">
+                        <img :src="contacts[activeChat].avatar" class="rounded-circle" alt="">
                         <div class="d-flex flex-column">
-                            <span class="">Fabio</span>
+                            <span class="">{{contacts[activeChat].name}}</span>
                             <span class="text-secondary text-small">Last access today at 23:00</span>
                         </div>
                     </div>
