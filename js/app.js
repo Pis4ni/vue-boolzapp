@@ -1,3 +1,5 @@
+var DateTime = luxon.DateTime.now();
+console.log(DateTime);
 const { createApp } = Vue
 
 createApp({
@@ -8,7 +10,11 @@ createApp({
       contacts:contacts,
       activeChat:0,
       actualTime:formattedDate,
-      atuoReply: false
+      atuoReply: false,
+      dropdown:{
+        index : 0,
+        show : false,
+      }
     }
   },
   methods:{
@@ -43,6 +49,28 @@ createApp({
         this.autoMessage(this.activeChat)
       },2000)
     },
+    handleDropdown(index){
+      if (this.dropdown.index == index && this.dropdown.show == true) {
+        
+        this.dropdown.index = index
+        this.dropdown.show = false
+      }else{
+              this.dropdown.index = index
+              this.dropdown.show = true
+      }
+
+      console.log(this.dropdown);
+    },
+    removeMessage(index){
+      console.log(this.contacts[this.activeChat].messages[index]);
+      this.dropdown.index = index
+      this.dropdown.show = false
+      this.contacts[this.activeChat].messages.splice(index,1)
+    },
+    formatMessageDate(dateString) {
+      const date = DateTime.fromISO(dateString);
+      return date.toFormat('mm:ss');
+    }
 
   },
   created() {

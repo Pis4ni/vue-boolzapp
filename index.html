@@ -16,6 +16,8 @@
     <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- JS -> VUE -->
     <script defer src="./js/app.js"></script>
+    <!-- luxon -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.1.1/build/global/luxon.min.js"></script>
     
     <title>Document</title>
 </head>
@@ -80,7 +82,7 @@
                 </div>
             </nav>
 
-            <!--! right-------------------->
+            <!--! right-------------------------------------------------------------------------------------------------------------------------------->
             <!--* visualized chat -->
             <div class="main-chat ">
                 <!--* selected chat header -->
@@ -104,13 +106,27 @@
                     <!--* message row -->
                     <div class="message-row d-flex m-2" v-for="(message,index) in contacts[activeChat].messages">
                         <!--* message container -->
-                        <div class="w-100 d-flex justify-content-end"  v-if="contacts[activeChat].messages[index].status == 'sent'" >
+                        <div class="w-100 d-flex justify-content-end "  v-if="contacts[activeChat].messages[index].status == 'sent'" >
                             <!-- * mine message -->
                             <div class="message mine d-flex">
                                 <!--* message content -->
                                 <p>{{contacts[activeChat].messages[index].message}}</p>
                                 <!--* message time -->
-                                <span class="text-secondary d-flex  flex-column justify-content-end text-small">{{contacts[activeChat].messages[index].date}}</span>
+                                <span class="text-secondary d-flex  flex-column justify-content-end text-small"></span>
+                                <!-- * message action button -->
+                                <div class="d-flex align-items-end msg-actions m-1">
+                                    <i class="fa-solid fa-chevron-down"  @click="handleDropdown(index)"></i>
+                                </div>
+                                <div class="dropdown" v-if="dropdown.index == index && dropdown.show == true">
+                                    <ul>
+                                        <li @click="removeMessage(index)">
+                                            Elimina messaggio
+                                        </li>
+                                        <li>
+                                            qualcosa
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                         <!--* message container -->
@@ -121,6 +137,20 @@
                                 <p>{{contacts[activeChat].messages[index].message}}</p>
                                 <!--* message time -->
                                 <span class="text-secondary d-flex  flex-column justify-content-end text-small">{{contacts[activeChat].messages[index].date}}</span>
+                                <!-- * message action button -->
+                                <div class="d-flex align-items-end msg-actions m-1">
+                                    <i class="fa-solid fa-chevron-down" @click="handleDropdown(index)"></i>
+                                </div>
+                                <div class="dropdown" v-if="dropdown.index == index && dropdown.show == true">
+                                    <ul class="">
+                                        <li @click="removeMessage(index)">
+                                            Elimina messaggio
+                                        </li>
+                                        <li>
+                                            qualcosa
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
 

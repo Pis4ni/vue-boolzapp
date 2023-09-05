@@ -114,7 +114,7 @@ ul{
 
 .chats{
     height: calc(100% - 160px);
-    overflow-y:scroll;
+    overflow-y:auto;
     background-color: #ffffff;
 }
 
@@ -125,7 +125,7 @@ nav ul li{
 .chat-display{
     height: calc(100% - 120px);
     background-image: url(../img/mine.jpg);
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 footer{
@@ -147,14 +147,38 @@ footer{
 .mine{
     background-color:#d5f9ba ;
     border-bottom-right-radius: 0;
+    position: relative;
 }
 .others{
     background-color:#ffffff ;
     border-bottom-left-radius: 0;
+    position: relative;
 }
 .chat{
     background-color: #ffffff;
 }
 .chat:hover{
     background-color: #e9ebeb;
+}
+.dropdown{
+    position: absolute;
+    bottom:-65px;
+    right: 0;
+    z-index: 2;
+    background-color: #ffffff;
+    border-radius: .5rem;
+    overflow: hidden;
+    display: ;
+}
+.dropdown>ul{
+    margin: 0;
+    padding: 0;
+}
+.dropdown>ul>li{
+    padding: .25rem;
+    cursor: pointer;
+
+}
+.dropdown>ul>li:hover{
+    background-color: #f2fbff;
 }
